@@ -30,7 +30,7 @@ return new class extends Migration
             $table->foreignIdFor(Category::class)
                 ->nullable()
                 ->constrained()
-                ->cascadeOnDelete();
+                ->nullOnDelete();
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });

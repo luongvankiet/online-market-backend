@@ -31,6 +31,12 @@ class UpdateProductAction
             }
         }
 
+        if ($updateProductRequest->hasFile('image')) {
+            $image_name = time() . '.' . $updateProductRequest->file('image')->extension();
+            $updateProductRequest->file('image')->move(public_path('storage/images'), $image_name);
+            $product->image = asset('storage/images') . '/' . $image_name;
+        }
+
         $product->save();
         return $product;
     }

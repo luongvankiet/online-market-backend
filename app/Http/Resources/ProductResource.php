@@ -2,8 +2,9 @@
 
 namespace App\Http\Resources;
 
-use App\Models\CategoryProduct;
+use Illuminate\Support\Str;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Models\CategoryProduct;
 
 class ProductResource extends JsonResource
 {
@@ -30,12 +31,10 @@ class ProductResource extends JsonResource
             'unit' => $this->resource->unit,
             'category_id' => $this->resource->category_id,
             'image' => $this->resource->image
-                ? asset("storage/images/{$this->resource->image}")
-                : null,
         ];
 
         if ($this->resource->relationLoaded('category')) {
-            $resource['category'] = ProductResource::make($this->resource->category);
+            $resource['category'] = CategoryResource::make($this->resource->category);
         }
 
         return array_merge($resource, [

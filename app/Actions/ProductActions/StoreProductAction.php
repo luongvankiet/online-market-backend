@@ -33,6 +33,12 @@ class StoreProductAction
             }
         }
 
+        if ($storeProductRequest->hasFile('image')) {
+            $image_name = time() . '.' . $storeProductRequest->file('image')->extension();
+            $storeProductRequest->file('image')->move(public_path('storage/images'), $image_name);
+            $product->image = asset('storage/images') . '/' . $image_name;
+        }
+
         $product->save();
         return $product;
     }

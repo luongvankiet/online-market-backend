@@ -33,3 +33,4 @@ Route::apiResources([
     'categories' => CategoryController::class,
     'products' => ProductController::class,
 ]);
+Route::post('/products/{product}', [ProductController::class, 'update']);

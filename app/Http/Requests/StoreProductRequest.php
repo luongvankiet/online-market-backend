@@ -31,7 +31,7 @@ class StoreProductRequest extends FormRequest
             'regular_price' => 'nullable|numeric|min:0',
             'sale_price' => 'nullable|numeric|min:0',
             'status' => 'nullable',
-            'category_id' => 'nullable|exists:categories,id',
+            'category_id' => 'nullable',
         ];
     }
 }
