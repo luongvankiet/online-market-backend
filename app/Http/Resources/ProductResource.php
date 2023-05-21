@@ -30,7 +30,7 @@ class ProductResource extends JsonResource
             'unit' => $this->resource->unit,
             'category_id' => $this->resource->category_id,
             'image' => $this->resource->image
-                ? asset("/images/{$this->resource->image}")
+                ? asset("storage/images/{$this->resource->image}")
                 : null,
         ];
 

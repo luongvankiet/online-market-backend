@@ -19,7 +19,7 @@ class CategoryFactory extends Factory
         return [
             'name' => fake()->name(),
             'description' => fake()->realText(),
-            'image' => fake()->image('public/images', 640, 480, null, false),
+            'image' => fake()->image(storage_path('images'), 640, 480, null, false),
             'published_at' => now(),
             'seller_id' => 1
         ];

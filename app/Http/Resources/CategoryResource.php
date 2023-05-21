@@ -21,7 +21,7 @@ class CategoryResource extends JsonResource
             'description' => $this->resource->description,
             'seller_id' => $this->resource->seller_id,
             'image' => $this->resource->image
-                ? asset("/images/{$this->resource->image}")
+                ? asset("storage/images/{$this->resource->image}")
                 : null,
             'products_count' => $this->resource->products_count,
         ];
