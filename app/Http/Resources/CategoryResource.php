@@ -20,7 +20,9 @@ class CategoryResource extends JsonResource
             'name' => $this->resource->name,
             'description' => $this->resource->description,
             'seller_id' => $this->resource->seller_id,
-            'image' => asset("storage/images/{$this->resource->image}"),
+            'image' => $this->resource->image
+                ? asset("/images/{$this->resource->image}")
+                : null,
             'products_count' => $this->resource->products_count,
         ];
 

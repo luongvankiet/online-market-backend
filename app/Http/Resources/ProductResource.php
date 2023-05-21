@@ -29,6 +29,9 @@ class ProductResource extends JsonResource
             'sale_price' => $this->resource->sale_price,
             'unit' => $this->resource->unit,
             'category_id' => $this->resource->category_id,
+            'image' => $this->resource->image
+                ? asset("/images/{$this->resource->image}")
+                : null,
         ];
 
         if ($this->resource->relationLoaded('category')) {

@@ -19,7 +19,7 @@ class ProductFactory extends Factory
         return [
             'name' => fake()->name(),
             'description' => fake()->realText(),
-            'image' => fake()->image('public/storage/images', 640, 480, null, false),
+            'image' => fake()->image('public/images', 640, 480, null, false),
             'status' => fake()->randomElement(['in_stock', 'out_of_stock']),
             'quantity' => fake()->numberBetween(0, 100),
             'regular_price' => fake()->numberBetween(100, 1000),
