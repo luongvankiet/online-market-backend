@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Actions\OrderActions\StoreOrderAction;
 use App\Http\QueryFilters\OrderQueryFilter;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
@@ -21,9 +22,16 @@ class OrderController extends Controller
         );
     }
 
-    public function store(StoreOrderRequest $request)
-    {
-        //
+    public function store(
+        StoreOrderRequest $request,
+        StoreOrderAction $storeOrderAction
+    ) {
+        $order = ($storeOrderAction)($request);
+        return OrderResource::make(
+            $order->load(['orderLines' => function ($orderLineQuery) {
+                return $orderLineQuery->with('product');
+            }, 'orderBillingAddress', 'orderShippingAddress'])
+        );
     }
 
     public function show(Order $order)

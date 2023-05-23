@@ -31,9 +31,9 @@ class OrderFactory extends Factory
             'shipping_method' => fake()->randomElement(['Pickup', 'Delivery']),
             'sub_total_price' => fake()->numberBetween($min = 1500, $max = 6000),
             'shipping_price' => fake()->numberBetween($min = 0, $max = 200),
-            'taxes' => fake()->numberBetween($min = 0, $max = 200),
             'discount_price' => 0,
             'total_price' => fake()->numberBetween($min = 1500, $max = 6000),
+            'seller_id' => '1',
         ];
     }
 }

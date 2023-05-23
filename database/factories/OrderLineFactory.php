@@ -20,9 +20,10 @@ class OrderLineFactory extends Factory
         $product = Product::inRandomOrder()->first();
         $quantity = fake()->numberBetween(10, 100);
         return [
+            'product_id' => $product ? $product->id : null,
             'product_name' => $product ? $product->name : fake()->name(),
             'quantity' => $quantity,
-            'total_price' => $product ? $product->price * $quantity : fake()->numberBetween(1000, 6000)
+            'total_price' => $product ? $product->sale_price * $quantity : fake()->numberBetween(1000, 6000)
         ];
     }
 }

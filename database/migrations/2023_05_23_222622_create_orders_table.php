@@ -21,10 +21,10 @@ return new class extends Migration
             $table->string('shipping_method')->nullable();
             $table->unsignedBigInteger('sub_total_price')->nullable()->default(0);
             $table->unsignedBigInteger('shipping_price')->nullable()->default(0);
-            $table->unsignedBigInteger('taxes')->nullable()->default(0);
             $table->unsignedBigInteger('discount_price')->nullable()->default(0);
             $table->unsignedBigInteger('total_price')->nullable()->default(0);
             $table->text('note')->nullable();
+            $table->string('seller_id')->nullable();
             $table->timestamps();
         });
     }
