@@ -16,8 +16,11 @@ class ProductFactory extends Factory
      */
     public function definition()
     {
+        $faker = \Faker\Factory::create();
+        $faker->addProvider(new \FakerRestaurant\Provider\en_US\Restaurant($faker));
+
         return [
-            'name' => fake()->name(),
+            'name' => $faker->foodName(),
             'description' => fake()->realText(),
             'status' => fake()->randomElement(['in_stock', 'out_of_stock']),
             'quantity' => fake()->numberBetween(0, 100),
