@@ -16,6 +16,10 @@ class Order extends Model
         'status_color',
     ];
 
+    protected $cast = [
+        'seller_id' => 'int',
+    ];
+
     public function getStatusNameAttribute(): string
     {
         return (new OrderStatus($this))->label();
