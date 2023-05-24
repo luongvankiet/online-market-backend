@@ -16,7 +16,7 @@ class Order extends Model
         'status_color',
     ];
 
-    protected $cast = [
+    protected $casts = [
         'seller_id' => 'int',
     ];
 
