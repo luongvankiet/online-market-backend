@@ -27,7 +27,7 @@ class ProductFactory extends Factory
             'regular_price' => fake()->numberBetween(100, 1000),
             'sale_price' => fake()->numberBetween(100, 1000),
             'unit' => fake()->randomElement(['pounds', 'kilograms', 'pieces']),
-            'seller_id' => '1',
+            'seller_id' => fake()->randomElement([1, 2]),
             'published_at' => now(),
         ];
     }

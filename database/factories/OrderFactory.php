@@ -17,6 +17,9 @@ class OrderFactory extends Factory
      */
     public function definition()
     {
+        $sellerId = fake()->randomElement([1, 2]);
+        $sellerName = $sellerId === 1 ? 'Ana' : 'Mike';
+
         return [
             'order_code' => fake()->regexify('[A-Z0-9]{10}'),
             'status' => fake()->randomElement([
@@ -33,7 +36,8 @@ class OrderFactory extends Factory
             'shipping_price' => fake()->numberBetween($min = 0, $max = 200),
             'discount_price' => 0,
             'total_price' => fake()->numberBetween($min = 1500, $max = 6000),
-            'seller_id' => '1',
+            'seller_id' => $sellerId,
+            'seller_name' => $sellerName,
         ];
     }
 }

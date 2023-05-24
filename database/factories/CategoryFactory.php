@@ -20,7 +20,7 @@ class CategoryFactory extends Factory
             'name' => fake()->name(),
             'description' => fake()->realText(),
             'published_at' => now(),
-            'seller_id' => 1
+            'seller_id' => fake()->randomElement([1, 2]),
         ];
     }
 }
