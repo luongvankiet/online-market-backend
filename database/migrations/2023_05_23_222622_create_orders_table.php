@@ -25,6 +25,7 @@ return new class extends Migration
             $table->unsignedBigInteger('total_price')->nullable()->default(0);
             $table->text('note')->nullable();
             $table->string('seller_id')->nullable();
+            $table->string('seller_name')->nullable();
             $table->timestamps();
         });
     }

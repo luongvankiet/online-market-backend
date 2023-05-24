@@ -28,6 +28,8 @@ class OrderResource extends JsonResource
             'discount_price' => $this->resource->discount_price,
             'total_price' => $this->resource->total_price,
             'note' => $this->resource->note,
+            'seller_id' => $this->resource->seller_id,
+            'seller_name' => $this->resource->seller_name,
         ];
 
         if ($this->resource->relationLoaded('orderLines')) {

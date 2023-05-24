@@ -20,6 +20,7 @@ class StoreOrderAction
         $order->shipping_method = $request->input('shipping_method');
         $order->note = $request->input('note');
         $order->seller_id = $request->input('seller_id');
+        $order->seller_name = $request->input('seller_name');
         $order->shipping_price = $request->input('shipping_price');
 
         $order->save();
