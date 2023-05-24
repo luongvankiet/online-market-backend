@@ -30,6 +30,9 @@ class OrderResource extends JsonResource
             'note' => $this->resource->note,
             'seller_id' => $this->resource->seller_id,
             'seller_name' => $this->resource->seller_name,
+            'status' => $this->resource->status,
+            'status_color' => $this->resource->status_color,
+            'status_name' => $this->resource->status_name,
         ];
 
         if ($this->resource->relationLoaded('orderLines')) {

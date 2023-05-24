@@ -6,7 +6,6 @@ class CategoryQueryFilter extends QueryFilter
 {
     protected $searchable = [
         'name',
-        'slug',
     ];
 
     protected $sortable = [
